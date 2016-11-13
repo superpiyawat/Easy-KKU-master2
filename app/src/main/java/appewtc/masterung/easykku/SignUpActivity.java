@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
@@ -156,6 +157,14 @@ public class SignUpActivity extends AppCompatActivity {
             super.onPostExecute(s);
 
             Log.d("13novV1", "Result ==> " + s);
+
+            if (Boolean.parseBoolean(s)) {
+                Toast.makeText(context,"Upload Success",Toast.LENGTH_SHORT).show();
+                finish();
+            } else {
+                Toast.makeText(context,"Can't Upload Success",Toast.LENGTH_SHORT).show();
+
+            }
 
         }   // onPost
 
